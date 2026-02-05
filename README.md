@@ -60,10 +60,9 @@ crontab -e
 
 ```bash
 # 每天早上 8 点执行
-0 8 * * * cd /root/Acckio-checkin && docker run --rm -v $(pwd):/app acck-checkin
+0 8 * * * docker run --rm -v /root/Acckio-checkin:/app acck-checkin >> /root/Acckio-checkin/cron.log 2>&1
 ```
-
-**注意**：将 `/root/Acckio-checkin` 替换为你的实际项目路径。
+**⚠️注意**：将 `/root/Acckio-checkin` 替换为你的实际项目路径。
 
 查看已设置的定时任务：
 ```bash
